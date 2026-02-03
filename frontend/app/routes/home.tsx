@@ -37,8 +37,15 @@ export default function Home() {
             liveUrl=""
           /> */}
           <ProjectCard
+            title="PickleBall Match Footage Splicer"
+            desc="ML-driven program that automatically identifies segment of deadtime and splices video."
+            tags={["Docker", "YOLOv8", "Python", "Typescript"]}
+            detailsUrl="https://github.com/SashimiDaBest/match-splicer-cli"
+            liveUrl=""
+          />
+          <ProjectCard
             title="PGSG Grant App"
-            desc=""
+            desc="Grant-handling application that implements double-blind for application processing and reimbursement."
             tags={["Typescript", "Python", "FastAPI", "React", "Posgres"]}
             detailsUrl="https://github.com/Purdue-ACM-SIGAPP/pgsg-grant-app-2526"
             liveUrl=""
@@ -59,21 +66,21 @@ export default function Home() {
           />
           <ProjectCard
             title="Bucket List"
-            desc=""
+            desc="A social media app for users to create, modify, and complete their bucketlists with others."
             tags={["Javascript", "Node.js", "React Native"]}
             detailsUrl="https://github.com/Purdue-ACM-SIGAPP/BucketList"
             liveUrl=""
           />
           <ProjectCard
             title="Boiler Rooms - Backend"
-            desc=""
+            desc="Backend project to power mobile app that displays housing options for students on Purdue campus."
             tags={["C#", ".NET", "MongoDB"]}
             detailsUrl="https://github.com/Purdue-ACM-SIGAPP/BoilerRooms-backend"
             liveUrl=""
           />
           <ProjectCard
             title="Talking Slides"
-            desc="Purdue Boiler Make Hackathon 2025 Project"
+            desc="Purdue Boiler Make Hackathon 2025 project that creates AI-generated study podcasts given specific study materials as inputs."
             tags={["Django", "MongoDB", "Python", "Javascript"]}
             detailsUrl="https://github.com/SashimiDaBest/TalkingSlides"
             // liveUrl=""
@@ -87,21 +94,21 @@ export default function Home() {
           />
           <ProjectCard
             title="Roadie Rescue"
-            desc="3rd Place Project @ Purdue Hello World Hackathon 2024"
+            desc="3rd place project @ Purdue Hello World Hackathon 2024."
             tags={["MongoDB", "Express", "React", "Node", "Javascript", "HTML", "CSS"]}
             detailsUrl="https://github.com/SashimiDaBest/hello-world-hack-24"
             // liveUrl=""
           />
           <ProjectCard
             title="Hexagon World"
-            desc="Automatic World-Building Simulation"
+            desc="Automatic world-building simulation through instatiating hexagons."
             tags={["C#", "Unity"]}
             detailsUrl="https://github.com/SashimiDaBest/hexagon-world"
             liveUrl="https://sashimidabest.github.io/hexagon-world-build/"
           />
           <ProjectCard
             title="Save The Chicken Game"
-            desc="Simple Reflex Testing Game"
+            desc="Simple reflex-testing game with the motive of haulting Santa's sleigh before a chicken is run over."
             tags={["C#", "Unity"]}
             detailsUrl="https://github.com/SashimiDaBest/save-chickens"
             liveUrl="https://sashimidabest.github.io/save-chickens-build/"
