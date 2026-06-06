@@ -240,12 +240,6 @@
   "cv": {
     "downloadUrl": "/resume.pdf",
     "bio": "Download my full CV for a comprehensive overview of my academic background, research, and software engineering experience.",
-    "stats": [
-      { "value": "3",   "label": "Research Labs"    },
-      { "value": "10+", "label": "Projects"         },
-      { "value": "2",   "label": "Internships"      },
-      { "value": "1",   "label": "Leadership Role"  }
-    ],
     "quickLinks": [
       { "label": "Projects",    "to": "/projects"    },
       { "label": "Experience",  "to": "/swe"         },

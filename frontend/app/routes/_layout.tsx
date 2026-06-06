@@ -9,7 +9,6 @@ import {
   CVIcon,
   LeetCodeIcon,
   LocationIcon,
-  DownloadIcon,
 } from "../components/ui";
 
 const NAV_LINKS = [
@@ -92,9 +91,9 @@ function ProfileCard() {
         <img
           src={publicUrl(profile.photo)}
           alt={profile.displayName}
-          width={96}
-          height={96}
-          className="rounded-full border-4 border-white shadow-md object-cover"
+          width={128}
+          height={128}
+          className="w-28 h-28 rounded-full border-4 border-white shadow-md object-cover"
         />
         <h2 className="mt-3 font-bold text-slate-900 text-base leading-tight">
           {profile.displayName}
@@ -151,17 +150,6 @@ function ProfileCard() {
         ))}
       </div>
 
-      {/* Resume download — always visible at the bottom */}
-      <div className="px-3 pb-3 pt-2 border-t border-brand-lavender/30 mt-1">
-        <a
-          href={publicUrl("resume.pdf")}
-          download
-          className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-brand-purple text-white text-xs font-semibold hover:opacity-90 transition-opacity"
-        >
-          <DownloadIcon size={13} />
-          Download Resume
-        </a>
-      </div>
     </div>
   );
 }
