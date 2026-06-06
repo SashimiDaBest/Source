@@ -32,6 +32,11 @@ jobs:
         working-directory: frontend
         run: bun run build
 
+      # SPA fallback: GitHub Pages serves 404.html when a route isn't found.
+      # Copying index.html → 404.html lets React Router handle all client-side routes.
+      - name: Create SPA 404 fallback
+        run: cp frontend/build/client/index.html frontend/build/client/404.html
+
       # Upload the static site folder
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
