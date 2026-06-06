@@ -1,244 +1,122 @@
 import type { Route } from "./+types/home";
+import { Link } from "react-router";
+import { PageWrapper, Card, TagMuted, GitHubIcon, LinkedInIcon, EmailIcon } from "../components/ui";
+import { cn } from "../styles";
+import { home, projects, swe } from "../data";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Portfolio" },
-    { name: "description", content: "Welcome to Soleil Pham's portfolio!" },
+    { title: "Soleil Pham" },
+    { name: "description", content: home.bio },
   ];
 }
 
-/** Small helpers to keep JSX clean */
-const shell = "mx-auto w-full max-w-6xl px-4";
-const section = "mx-auto max-w-6xl px-4";
-const sectionTitle = "text-3xl font-bold";
-const sectionSub = "opacity-70 mt-1";
-
 export default function Home() {
   return (
-    <main className="min-h-screen bg-base-200 text-base-content">
-      <Navbar />
-
-      {/* <section className={`${section} py-14`}>
-        <Hero />
-      </section> */}
-
-      <section id="projects" className={`${section} pb-14`}>
-        <div className="flex items-end justify-between gap-4">
-          <div className="mt-20"></div>
-          <span className="badge badge-outline">More soon</span>
+    <PageWrapper>
+      {/* Intro */}
+      <div className="mb-10">
+        <p className={cn.sectionLabel}>Welcome</p>
+        <h1 className="text-3xl font-extrabold text-slate-900 mt-1 leading-tight">
+          {home.greeting}
+        </h1>
+        <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-lg">
+          {home.bio}
+        </p>
+        <div className="flex flex-wrap gap-2 mt-5">
+          <a href="mailto:soleilpham@gmail.com" className={cn.btnPrimary}>
+            <EmailIcon size={14} /> Get in touch
+          </a>
+          <a
+            href="https://github.com/SashimiDaBest"
+            target="_blank"
+            rel="noreferrer"
+            className={cn.btnOutline}
+          >
+            <GitHubIcon size={14} /> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/chan-nhu-p-4876a127a"
+            target="_blank"
+            rel="noreferrer"
+            className={cn.btnGhost}
+          >
+            <LinkedInIcon size={14} /> LinkedIn
+          </a>
         </div>
+      </div>
 
-        <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {/* <ProjectCard
-            title="Project Name"
-            desc="Project Description"
-            tags={["", "", ""]}
-            detailsUrl=""
-            liveUrl=""
-          /> */}
-          <ProjectCard
-            title="PickleBall Match Footage Splicer"
-            desc="ML-driven program that automatically identifies segment of deadtime and splices video."
-            tags={["Docker", "YOLOv8", "Python", "Typescript"]}
-            detailsUrl="https://github.com/SashimiDaBest/match-splicer-cli"
-            liveUrl=""
-          />
-          <ProjectCard
-            title="PGSG Grant App"
-            desc="Grant-handling application that implements double-blind for application processing and reimbursement."
-            tags={["Typescript", "Python", "FastAPI", "React", "Posgres"]}
-            detailsUrl="https://github.com/Purdue-ACM-SIGAPP/pgsg-grant-app-2526"
-            liveUrl=""
-          />
-          <ProjectCard
-            title="Boiler Buzz - Backend"
-            desc=""
-            tags={["Postgres", "Node.js", "Javascript"]}
-            detailsUrl="https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-backend"
-            liveUrl=""
-          />
-          <ProjectCard
-            title="Boiler Buzz - Frontend"
-            desc=""
-            tags={["Typescript", "React Native"]}
-            detailsUrl="https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-frontend"
-            liveUrl=""
-          />
-          <ProjectCard
-            title="Bucket List"
-            desc="A social media app for users to create, modify, and complete their bucketlists with others."
-            tags={["Javascript", "Node.js", "React Native"]}
-            detailsUrl="https://github.com/Purdue-ACM-SIGAPP/BucketList"
-            liveUrl=""
-          />
-          <ProjectCard
-            title="Boiler Rooms - Backend"
-            desc="Backend project to power mobile app that displays housing options for students on Purdue campus."
-            tags={["C#", ".NET", "MongoDB"]}
-            detailsUrl="https://github.com/Purdue-ACM-SIGAPP/BoilerRooms-backend"
-            liveUrl=""
-          />
-          <ProjectCard
-            title="Talking Slides"
-            desc="Purdue Boiler Make Hackathon 2025 project that creates AI-generated study podcasts given specific study materials as inputs."
-            tags={["Django", "MongoDB", "Python", "Javascript"]}
-            detailsUrl="https://github.com/SashimiDaBest/TalkingSlides"
-            // liveUrl=""
-          />
-          <ProjectCard
-            title="Boiler Gram - Social Media App"
-            desc="A Multi-threaded Java client-server social media platform."
-            tags={["Java", "Swing UI", "JUnit"]}
-            detailsUrl="https://github.com/SashimiDaBest/social-media-app"
-            // liveUrl=""
-          />
-          <ProjectCard
-            title="Roadie Rescue"
-            desc="3rd place project @ Purdue Hello World Hackathon 2024."
-            tags={["MongoDB", "Express", "React", "Node", "Javascript", "HTML", "CSS"]}
-            detailsUrl="https://github.com/SashimiDaBest/hello-world-hack-24"
-            // liveUrl=""
-          />
-          <ProjectCard
-            title="Hexagon World"
-            desc="Automatic world-building simulation through instatiating hexagons."
-            tags={["C#", "Unity"]}
-            detailsUrl="https://github.com/SashimiDaBest/hexagon-world"
-            liveUrl="https://sashimidabest.github.io/hexagon-world-build/"
-          />
-          <ProjectCard
-            title="Save The Chicken Game"
-            desc="Simple reflex-testing game with the motive of haulting Santa's sleigh before a chicken is run over."
-            tags={["C#", "Unity"]}
-            detailsUrl="https://github.com/SashimiDaBest/save-chickens"
-            liveUrl="https://sashimidabest.github.io/save-chickens-build/"
-          />
-        </div>
-      </section>
-
-      <section id="contact" className={`${section} pb-16`}>
-        <Card title="Contact">
-          <div className="mt-4 flex flex-wrap gap-3">
-            <a className="btn btn-primary" 
-              href="mailto:soleilpham@gmail.com"
-            >
-              Email
-            </a>
-            <a
-              className="btn btn-outline"
-              href="https://github.com/SashimiDaBest"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-            <a
-              className="btn btn-ghost"
-              href="https://www.linkedin.com/in/chan-nhu-p-4876a127a/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
+      {/* Stats — staggered fade-up, alternating accent colors */}
+      {(() => {
+        const accentColors = [
+          "text-brand-purple",
+          "text-brand-amber",
+          "text-brand-coral",
+          "text-brand-purple",
+        ] as const;
+        const topBorders = [
+          "border-t-2 border-t-brand-purple",
+          "border-t-2 border-t-brand-amber",
+          "border-t-2 border-t-brand-coral",
+          "border-t-2 border-t-brand-purple",
+        ] as const;
+        return (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+            {home.stats.map(({ value, label }, i) => (
+              <div
+                key={label}
+                className={`text-center bg-white border border-brand-lavender/60 ${topBorders[i]} rounded-xl py-4 px-2 shadow-sm animate-fade-up`}
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
+                <p className={`text-2xl font-extrabold ${accentColors[i]}`}>{value}</p>
+                <p className="text-xs text-slate-500 mt-1 leading-tight">{label}</p>
+              </div>
+            ))}
           </div>
+        );
+      })()}
 
-          <p className="mt-6 text-sm opacity-60">
-            © {new Date().getFullYear()} Soleil Pham
-          </p>
-        </Card>
-      </section>
-    </main>
-  );
-}
-
-function Navbar() {
-  return (
-    <div className="navbar bg-base-100 sticky top-0 z-50 border-b border-base-300">
-      <div className={shell}>
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Soleil Pham</a>
-        </div>
-
-        <div className="flex-none gap-2">
-          <a className="btn btn-ghost btn-sm" href="#projects">
-            Projects
-          </a>
-          <a className="btn btn-primary btn-sm" href="#contact">
-            Contact
-          </a>
-        </div>
+      {/* Featured projects */}
+      <div className="mb-3 flex items-center justify-between">
+        <p className={cn.sectionLabel}>Featured Projects</p>
+        <Link to="/projects" className={cn.accentLink + " text-xs font-semibold"}>
+          View all →
+        </Link>
       </div>
-    </div>
-  );
-}
-
-function Card({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="card bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title text-2xl">{title}</h2>
-        {children}
+      <div className="space-y-3 mb-10">
+        {projects.slice(0, 3).map((p) => (
+          <Card key={p.title} hover>
+            <h3 className="font-bold text-slate-900 text-sm mb-1">{p.title}</h3>
+            <p className="text-xs text-slate-600 leading-relaxed mb-3">{p.desc}</p>
+            <div className="flex flex-wrap gap-1.5">
+              {p.tags.map((t) => <TagMuted key={t}>{t}</TagMuted>)}
+            </div>
+          </Card>
+        ))}
       </div>
-    </div>
-  );
-}
 
-function ProjectCard({
-  title,
-  desc,
-  tags,
-  detailsUrl,
-  liveUrl,
-}: {
-  title: string;
-  desc: string;
-  tags: string[];
-  detailsUrl?: string;
-  liveUrl?: string;
-}) {
-  return (
-    <div className="card bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h3 className="card-title">{title}</h3>
-        <p className="opacity-80">{desc}</p>
-
-        <div className="mt-3 flex flex-wrap gap-2">
-          {tags.map((t) => (
-            <span key={t} className="badge badge-outline">
-              {t}
-            </span>
-          ))}
-        </div>
-
-        <div className="card-actions justify-end mt-4">
-          {detailsUrl && (
-            <a
-              href={detailsUrl}
-              className="btn btn-sm btn-ghost"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Details
-            </a>
-          )}
-          {liveUrl && (
-            <a
-              href={liveUrl}
-              className="btn btn-sm btn-primary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Live
-            </a>
-          )}
-        </div>
+      {/* Latest experience */}
+      <div className="mb-3 flex items-center justify-between">
+        <p className={cn.sectionLabel}>Latest Experience</p>
+        <Link to="/swe" className={cn.accentLink + " text-xs font-semibold"}>
+          View all →
+        </Link>
       </div>
-    </div>
+      <Card>
+        <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+          <div>
+            <p className="font-bold text-slate-900 text-sm">{swe[0].org}</p>
+            <p className="text-brand-purple font-semibold text-xs mt-0.5">{swe[0].role}</p>
+          </div>
+          <p className="text-xs text-slate-500 shrink-0">{swe[0].period}</p>
+        </div>
+        <p className="text-xs text-slate-600 leading-relaxed">{swe[0].bullets[0]}</p>
+      </Card>
+
+      <p className="mt-14 text-xs text-slate-400 text-center">
+        © {new Date().getFullYear()} {/* fullName from profile could go here */}
+        Chan Nhu (Soleil) Nguyen Pham
+      </p>
+    </PageWrapper>
   );
 }
