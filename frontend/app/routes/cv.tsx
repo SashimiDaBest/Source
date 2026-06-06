@@ -9,6 +9,7 @@ import {
 } from "../components/ui";
 import { cn } from "../styles";
 import { cv, education } from "../data";
+import { publicUrl } from "../utils";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "CV — Soleil Pham" }];
@@ -24,7 +25,7 @@ export default function CV() {
       {/* Download */}
       <div className="bg-white border border-brand-lavender/60 rounded-xl p-6 shadow-sm mb-8">
         <p className="text-xs text-slate-600 mb-4 max-w-md">{cv.bio}</p>
-        <PrimaryButton href={cv.downloadUrl} download>
+        <PrimaryButton href={publicUrl(cv.downloadUrl)} download>
           <DownloadIcon size={14} />
           Download CV (PDF)
         </PrimaryButton>

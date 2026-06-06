@@ -1,5 +1,6 @@
 import { NavLink, Outlet, useLocation } from "react-router";
 import { cn } from "../styles";
+import { publicUrl } from "../utils";
 import { profile } from "../data";
 import {
   GitHubIcon,
@@ -40,7 +41,7 @@ export default function Layout() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? cn.navLinkActive + " text-base font-bold" : cn.navLink + " text-base font-bold text-slate-900"
+              isActive ? cn.navLinkActive + " text-lg font-bold" : cn.navLink + " text-lg font-bold text-slate-900"
             }
           >
             Soleil Pham
@@ -89,7 +90,7 @@ function ProfileCard() {
       {/* Header */}
       <div className={cn.profileCardHeader}>
         <img
-          src={profile.photo}
+          src={publicUrl(profile.photo)}
           alt={profile.displayName}
           width={96}
           height={96}
@@ -153,7 +154,7 @@ function ProfileCard() {
       {/* Resume download — always visible at the bottom */}
       <div className="px-3 pb-3 pt-2 border-t border-brand-lavender/30 mt-1">
         <a
-          href="/resume.pdf"
+          href={publicUrl("resume.pdf")}
           download
           className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-brand-purple text-white text-xs font-semibold hover:opacity-90 transition-opacity"
         >
