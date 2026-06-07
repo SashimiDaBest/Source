@@ -68,12 +68,12 @@ export const cn = {
 
   // ── Navbar ──
   navLink:
-    "relative px-2 py-1 text-sm text-slate-600 transition-colors hover:text-brand-purple whitespace-nowrap " +
+    "relative px-3.5 py-1 text-sm text-slate-600 transition-colors hover:text-brand-purple whitespace-nowrap " +
     "after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 " +
     "after:h-0.5 after:bg-brand-coral after:scale-x-0 after:origin-left " +
     "after:transition-transform after:duration-200 hover:after:scale-x-100",
   navLinkActive:
-    "relative px-2 py-1 text-sm text-brand-purple font-semibold whitespace-nowrap " +
+    "relative px-3.5 py-1 text-sm text-brand-purple font-semibold whitespace-nowrap " +
     "after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 " +
     "after:h-0.5 after:bg-brand-coral after:scale-x-100 after:origin-left",
 

@@ -1,8 +1,15 @@
 /**
- * Typed data layer — imports from content.json and re-exports with types.
- * To update website content, edit content.json only.
+ * Typed data layer — imports from app/portfolio/ and re-exports with types.
+ * To update website content, edit the corresponding file in app/portfolio/.
+ * To add blog posts, see app/blog/index.ts.
  */
-import raw from "./content.json";
+import rawProfile     from "./portfolio/profile.json";
+import rawHome        from "./portfolio/home.json";
+import rawProjects    from "./portfolio/projects.json";
+import rawEducation   from "./portfolio/education.json";
+import rawSwe         from "./portfolio/swe.json";
+import rawPublication from "./portfolio/publication.json";
+import rawCv          from "./portfolio/cv.json";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -65,12 +72,21 @@ export type QuickLink = {
   to: string;
 };
 
+export type BlogPost = {
+  slug: string;
+  title: string;
+  date: string;
+  tags: string[];
+  summary: string;
+  content: string;
+};
+
 // ─── Exports ───────────────────────────────────────────────────────────────
 
-export const profile   = raw.profile   as Profile;
-export const home      = raw.home      as { greeting: string; bio: string; stats: Stat[] };
-export const projects  = raw.projects  as Project[];
-export const education = raw.education as {
+export const profile   = rawProfile   as Profile;
+export const home      = rawHome      as { greeting: string; bio: string; stats: Stat[] };
+export const projects  = rawProjects  as Project[];
+export const education = rawEducation as {
   degree: {
     school: string;
     degree: string;
@@ -82,13 +98,13 @@ export const education = raw.education as {
   coursework: string[];
   skills: Record<string, string[]>;
 };
-export const swe = raw.swe as Experience[];
-export const publication = raw.publication as {
+export const swe = rawSwe as Experience[];
+export const publication = rawPublication as {
   comingSoon: boolean;
   labs: Lab[];
   items: Publication[];
 };
-export const cv = raw.cv as {
+export const cv = rawCv as {
   downloadUrl: string;
   bio: string;
   stats: Stat[];

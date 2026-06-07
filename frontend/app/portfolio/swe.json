@@ -1,0 +1,47 @@
+[
+  {
+    "org": "Purdue ACM SIGAPP",
+    "location": "West Lafayette, IN",
+    "role": "President & Technical Lead",
+    "period": "Aug 2025 – Present",
+    "bullets": [
+      "Led backend development for two large-scale student-run software projects with ~20 contributors each, coordinating architecture decisions, sprint planning, and code reviews.",
+      "Designed REST APIs, database schemas, and authentication flows for BoilerBuzz, a cross-platform mobile app backed by Node.js and PostgreSQL.",
+      "Architected a FastAPI-based grant management platform for Purdue PGSG, supporting submission, review, approval, and reimbursement workflows.",
+      "Implemented role-based access control (RBAC) using Keycloak, enabling secure multi-role authorization and multi-stage approval pipelines."
+    ]
+  },
+  {
+    "org": "Purdue University — College of Liberal Arts",
+    "location": "West Lafayette, IN",
+    "role": "Web Developer",
+    "period": "Jan 2026 – Present",
+    "bullets": [
+      "Maintained and extended university web services by developing reusable templates and components using HTML, CSS, JavaScript, and Apache Velocity.",
+      "Resolved support tickets involving content updates, accessibility improvements, and legacy system maintenance."
+    ]
+  },
+  {
+    "org": "Reclub — Sports Technology Startup",
+    "location": "Ho Chi Minh City, VN",
+    "role": "Software Engineer Intern",
+    "period": "May 2025 – Aug 2025",
+    "bullets": [
+      "Designed and deployed an automated video segmentation system that identifies pickleball rallies from raw match footage, reducing manual editing time from hours to minutes.",
+      "Built and optimized a YOLOv10s-based, motion-aware classification pipeline achieving 96% accuracy while targeting near–real-time, on-device inference.",
+      "Implemented an end-to-end ML pipeline including large-scale data labeling (36K+ frames), training, and cloud deployment using Docker, GCS, and Vertex AI.",
+      "Productionized model inference workflows to support scalable content generation, contributing to increased user engagement and platform adoption."
+    ]
+  },
+  {
+    "org": "Amazon Web Services (AWS) Youth Experience Program",
+    "location": "Remote",
+    "role": "Data Analytics Intern",
+    "period": "Jul 2023 – Aug 2023",
+    "bullets": [
+      "Developed Python-based data processing pipelines using Pandas, NumPy, and scikit-learn to analyze wildfire risk through forest-type prediction.",
+      "Evaluated multiple ML models (Logistic Regression, Decision Trees, Random Forests, Neural Networks, KNN) to identify optimal features and improve predictive accuracy.",
+      "Recognized as a top 5 intern project for technical quality and clarity of analysis."
+    ]
+  }
+]

@@ -8,5 +8,7 @@ export default [
     route("publication", "routes/publication.tsx"),
     route("swe",         "routes/swe.tsx"),
     route("cv",          "routes/cv.tsx"),
+    route("blog",        "routes/blog.tsx"),
+    route("blog/:slug",  "routes/blog.$slug.tsx"),
   ]),
 ] satisfies RouteConfig;

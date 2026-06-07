@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { to: "/publication", label: "Publication" },
   { to: "/swe",         label: "SWE"         },
   { to: "/cv",          label: "CV"          },
+  // { to: "/blog",        label: "Blog"        },
 ];
 
 const ICON_MAP: Record<string, React.ReactNode> = {
