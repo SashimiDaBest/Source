@@ -21,11 +21,40 @@
 
 html {
   scroll-behavior: smooth;
+  /* Simulate the comfortable scale the user prefers at 125% browser zoom.
+     All rem-based Tailwind sizes scale proportionally with this. */
+  font-size: 18px;
 }
 
 html,
 body {
   @apply min-h-screen font-sans bg-brand-cream;
+}
+
+/* ─── Skip navigation link (ADA) ───────────────────────────────────────── */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1.25rem;
+  background: #5B5F97;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ─── Visible focus rings for keyboard navigation (ADA) ────────────────── */
+:focus-visible {
+  outline: 2px solid #5B5F97;
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar { width: 6px; }

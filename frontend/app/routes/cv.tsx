@@ -20,6 +20,8 @@ export default function CV() {
         <iframe
           src={resumeUrl}
           title="Resume — Soleil Pham"
+          aria-label="Soleil Pham's resume PDF"
+          loading="lazy"
           className="w-full"
           style={{ height: "82vh", minHeight: 600 }}
         />

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router";
 import { cn } from "../styles";
 import { publicUrl } from "../utils";
@@ -31,25 +32,56 @@ const MAP_URL = "https://maps.app.goo.gl/qgyWv4zwnnWzVePK9";
 
 export default function Layout() {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isHome = location.pathname === "/";
+
+  // Close menu whenever the route changes
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <div className={`min-h-screen ${cn.pageBg}`}>
-      {/* ── Top navbar ── */}
+
+      {/* ADA: skip link */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
+      {/* Backdrop — closes the menu when the user taps outside, mobile only */}
+      {menuOpen && (
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 z-40 lg:hidden"
+          onClick={closeMenu}
+        />
+      )}
+
+      {/* ── Navbar ── */}
       <header className="fixed top-0 inset-x-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-lavender/50">
-        <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-6">
-          {/* Brand — same h-0.5 coral underline as nav items */}
+        <nav
+          aria-label="Primary navigation"
+          className="w-full px-5 sm:px-7 lg:px-10 h-14 flex items-center justify-between gap-4"
+        >
+          {/* Brand — always visible */}
           <NavLink
             to="/"
+            aria-label="Soleil Pham — home"
+            onClick={closeMenu}
             className={({ isActive }) =>
-              isActive ? cn.navLinkActive + " text-lg font-bold" : cn.navLink + " text-lg font-bold text-slate-900"
+              isActive
+                ? cn.navLinkActive + " text-xl font-bold"
+                : cn.navLink + " text-xl font-bold text-slate-900"
             }
           >
             Soleil Pham
           </NavLink>
-          <div className="flex items-center gap-1 overflow-x-auto">
+
+          {/* Desktop nav links — hidden on mobile */}
+          <div className="hidden lg:flex items-center gap-0.5" role="list">
             {NAV_LINKS.map(({ to, label }) => (
               <NavLink
                 key={to}
                 to={to}
+                role="listitem"
                 className={({ isActive }) =>
                   isActive ? cn.navLinkActive : cn.navLink
                 }
@@ -58,23 +90,91 @@ export default function Layout() {
               </NavLink>
             ))}
           </div>
+
+          {/* Hamburger — visible only on mobile */}
+          <button
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMenuOpen((o) => !o)}
+            className="lg:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg hover:bg-brand-lavender/20 transition-colors gap-1.5 shrink-0"
+          >
+            {/* Three bars that animate into an X */}
+            <span
+              className={`block h-0.5 w-5 bg-slate-700 rounded-full transition-all duration-200 origin-center ${
+                menuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-slate-700 rounded-full transition-all duration-200 ${
+                menuOpen ? "opacity-0 scale-x-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-slate-700 rounded-full transition-all duration-200 origin-center ${
+                menuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </button>
         </nav>
+
+        {/* Mobile dropdown menu */}
+        {menuOpen && (
+          <div
+            id="mobile-menu"
+            role="menu"
+            aria-label="Mobile navigation"
+            className="lg:hidden border-t border-brand-lavender/40 bg-brand-cream/95 backdrop-blur-md animate-fade-in"
+          >
+            {NAV_LINKS.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                role="menuitem"
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `block px-6 py-3 text-sm font-medium border-b border-brand-lavender/20 transition-colors ${
+                    isActive
+                      ? "text-brand-purple bg-brand-lavender/10"
+                      : "text-slate-700 hover:text-brand-purple hover:bg-brand-lavender/10"
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </div>
+        )}
       </header>
 
-      {/* ── Body: left profile sidebar + page content ── */}
-      <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 flex flex-col lg:flex-row gap-8 items-start">
+      {/* ── Body ── */}
+      {/*
+        pt-20 = 80px offset from the fixed 56px navbar.
+        The sidebar uses sticky top-20 + max-h-[calc(100vh-5rem)] to stay
+        locked in the viewport once the user scrolls past the initial gap.
+      */}
+      <div className="w-full px-5 sm:px-7 lg:px-10 pt-20 pb-10 flex flex-col lg:flex-row gap-6 items-start">
 
-        {/* ── Left profile sidebar — slides in once on load ── */}
-        <aside className="w-full lg:w-60 xl:w-64 shrink-0">
-          <div className="lg:sticky lg:top-24 animate-slide-left">
+        {/* ── Left sidebar — locked on desktop ── */}
+        {/* Sidebar: always visible on desktop; on mobile only shown on the home page */}
+        <aside
+          aria-label="Profile and navigation"
+          role="complementary"
+          className={`w-full lg:w-72 shrink-0 lg:sticky lg:top-20 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto ${
+            isHome ? "block" : "hidden lg:block"
+          }`}
+        >
+          <div className="animate-slide-left">
             <ProfileCard />
           </div>
         </aside>
 
-        {/* ── Page content — fades up on every route change ── */}
+        {/* ── Main content — fades in on route change ── */}
         <main
+          id="main-content"
           key={location.pathname}
-          className="flex-1 min-w-0 min-h-[calc(100vh-10rem)] animate-fade-up"
+          tabIndex={-1}
+          className="flex-1 min-w-0 animate-fade-up outline-none"
         >
           <Outlet />
         </main>
@@ -86,38 +186,50 @@ export default function Layout() {
 function ProfileCard() {
   return (
     <div className="bg-white border border-brand-lavender/60 rounded-2xl shadow-sm overflow-hidden">
+
       {/* Header */}
       <div className={cn.profileCardHeader}>
+        {/* fetchpriority=high: this image is always above the fold */}
         <img
           src={publicUrl(profile.photo)}
-          alt={profile.displayName}
+          alt={`${profile.displayName} profile photo`}
           width={128}
           height={128}
+          // @ts-expect-error fetchpriority is a valid HTML attribute not yet in React types
+          fetchpriority="high"
           className="w-28 h-28 rounded-full border-4 border-white shadow-md object-cover"
         />
         <h2 className="mt-3 font-bold text-slate-900 text-base leading-tight">
           {profile.displayName}
         </h2>
-        <p className="text-xs text-slate-500 mt-0.5">{profile.fullName}</p>
-        <div className="mt-3 flex flex-col items-center gap-1.5">
+        <p className="text-xs text-slate-500 mt-0.5" aria-label="Full name">
+          {profile.fullName}
+        </p>
+        <div className="mt-3 flex flex-col items-center gap-1.5" aria-label="Roles">
           {profile.titles.map((t, i) => (
             <p key={t} className="text-xs font-medium text-slate-700 flex items-center gap-1.5">
-              <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${i === 0 ? "bg-brand-amber" : "bg-brand-coral"}`} />
+              <span
+                aria-hidden="true"
+                className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                  i === 0 ? "bg-brand-amber" : "bg-brand-coral"
+                }`}
+              />
               {t}
             </p>
           ))}
         </div>
       </div>
 
-      {/* Location — linked to Google Maps */}
+      {/* Location */}
       <div className="px-4 py-3 border-t border-brand-lavender/30">
         <a
           href={MAP_URL}
           target="_blank"
           rel="noreferrer"
+          aria-label={`${profile.university}, ${profile.location} — open in Google Maps`}
           className="flex items-center gap-2 group"
         >
-          <span className="text-brand-lavender group-hover:text-brand-purple transition-colors shrink-0">
+          <span aria-hidden="true" className="text-brand-lavender group-hover:text-brand-purple transition-colors shrink-0">
             <LocationIcon size={14} />
           </span>
           <div>
@@ -129,26 +241,31 @@ function ProfileCard() {
         </a>
       </div>
 
-      {/* Social links */}
-      <div className="px-2 pb-1 border-t border-brand-lavender/30 pt-2 space-y-0.5">
-        {profile.links.map(({ label, sub, href, icon }) => (
-          <a
-            key={label}
-            href={href}
-            target={href.startsWith("http") ? "_blank" : undefined}
-            rel={href.startsWith("http") ? "noreferrer" : undefined}
-            className={cn.profileLink}
-          >
-            <span className={cn.profileLinkIcon}>{ICON_MAP[icon]}</span>
-            <div className="min-w-0">
-              <p className="text-xs font-semibold text-slate-700 group-hover:text-slate-900 leading-tight">
-                {label}
-              </p>
-              <p className="text-xs text-slate-400 truncate">{sub}</p>
-            </div>
-          </a>
-        ))}
-      </div>
+      {/* Links */}
+      <nav aria-label="Social and contact links">
+        <div className="px-2 pb-3 border-t border-brand-lavender/30 pt-2 space-y-0.5">
+          {profile.links.map(({ label, sub, href, icon }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noreferrer" : undefined}
+              aria-label={`${label}: ${sub}`}
+              className={cn.profileLink}
+            >
+              <span aria-hidden="true" className={cn.profileLinkIcon}>
+                {ICON_MAP[icon]}
+              </span>
+              <div className="min-w-0">
+                <p className="text-xs font-semibold text-slate-700 group-hover:text-slate-900 leading-tight">
+                  {label}
+                </p>
+                <p className="text-xs text-slate-500 truncate">{sub}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </nav>
 
     </div>
   );

@@ -23,27 +23,6 @@ export default function Home() {
         <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-lg">
           {home.bio}
         </p>
-        <div className="flex flex-wrap gap-2 mt-5">
-          <a href="mailto:soleilpham@gmail.com" className={cn.btnPrimary}>
-            <EmailIcon size={14} /> Get in touch
-          </a>
-          <a
-            href="https://github.com/SashimiDaBest"
-            target="_blank"
-            rel="noreferrer"
-            className={cn.btnOutline}
-          >
-            <GitHubIcon size={14} /> GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/chan-nhu-p-4876a127a"
-            target="_blank"
-            rel="noreferrer"
-            className={cn.btnGhost}
-          >
-            <LinkedInIcon size={14} /> LinkedIn
-          </a>
-        </div>
       </div>
 
       {/* Stats — staggered fade-up, alternating accent colors */}
