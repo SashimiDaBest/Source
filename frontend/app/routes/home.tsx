@@ -26,7 +26,7 @@ export default function Home() {
       </div>
 
       {/* Stats — staggered fade-up, alternating accent colors */}
-      {(() => {
+      {/* {(() => {
         const accentColors = [
           "text-brand-purple",
           "text-brand-amber",
@@ -53,7 +53,7 @@ export default function Home() {
             ))}
           </div>
         );
-      })()}
+      })()} */}
 
       {/* Featured projects */}
       <div className="mb-3 flex items-center justify-between">
