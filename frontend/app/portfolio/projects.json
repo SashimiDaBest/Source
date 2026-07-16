@@ -1,0 +1,73 @@
+[
+  {
+    "title": "PickleBall Match Footage Splicer",
+    "desc": "ML-driven system that automatically identifies rally segments and splices dead time from pickleball match footage.",
+    "tags": ["Docker", "YOLOv10", "Python", "TypeScript"],
+    "github": "https://github.com/soleilpham/match-splicer-cli",
+    "live": ""
+  },
+  {
+    "title": "PGSG Grant Management Platform",
+    "desc": "Grant-handling application with double-blind processing, multi-stage approval, and reimbursement workflows backed by Keycloak RBAC.",
+    "tags": ["TypeScript", "Python", "FastAPI", "React", "PostgreSQL", "Keycloak"],
+    "github": "https://github.com/Purdue-ACM-SIGAPP/pgsg-grant-app-2526",
+    "live": ""
+  },
+  {
+    "title": "BoilerBuzz",
+    "desc": "Cross-platform mobile social app for Purdue students. Node.js/PostgreSQL backend with React Native frontend.",
+    "tags": ["Node.js", "PostgreSQL", "TypeScript", "React Native"],
+    "githubBackend": "https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-backend",
+    "githubFrontend": "https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-frontend",
+    "live": ""
+  },
+  {
+    "title": "Talking Slides",
+    "desc": "BoilerMake 2025 project that generates AI-powered study podcasts from uploaded study materials.",
+    "tags": ["Django", "MongoDB", "Python", "JavaScript"],
+    "github": "https://github.com/soleilpham/TalkingSlides",
+    "live": ""
+  },
+  {
+    "title": "BoilerGram",
+    "desc": "Multi-threaded Java client-server social media platform with a full UI built in Java Swing.",
+    "tags": ["Java", "Swing", "JUnit", "Multithreading"],
+    "github": "https://github.com/soleilpham/social-media-app",
+    "live": ""
+  },
+  {
+    "title": "Bucket List",
+    "desc": "Social media app for creating and completing bucket lists collaboratively with friends.",
+    "tags": ["JavaScript", "Node.js", "React Native"],
+    "github": "https://github.com/Purdue-ACM-SIGAPP/BucketList",
+    "live": ""
+  },
+  {
+    "title": "Boiler Rooms — Backend",
+    "desc": "Backend API powering a mobile app that surfaces campus housing options for Purdue students.",
+    "tags": ["C#", ".NET", "MongoDB"],
+    "github": "https://github.com/Purdue-ACM-SIGAPP/BoilerRooms-backend",
+    "live": ""
+  },
+  {
+    "title": "Roadie Rescue",
+    "desc": "3rd place project at Purdue Hello World Hackathon 2024.",
+    "tags": ["MongoDB", "Express", "React", "Node.js"],
+    "github": "https://github.com/soleilpham/hello-world-hack-24",
+    "live": ""
+  },
+  {
+    "title": "Hexagon World",
+    "desc": "Procedural world-building simulation through hexagonal terrain generation.",
+    "tags": ["C#", "Unity"],
+    "github": "https://github.com/soleilpham/hexagon-world",
+    "live": "https://soleilpham.github.io/hexagon-world-build/"
+  },
+  {
+    "title": "Save The Chicken",
+    "desc": "Reflex-testing game where you halt Santa's sleigh before a chicken gets run over.",
+    "tags": ["C#", "Unity"],
+    "github": "https://github.com/soleilpham/save-chickens",
+    "live": "https://soleilpham.github.io/save-chickens-build/"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "displayName": "Soleil Pham",
+  "fullName": "Chan Nhu (Soleil) Nguyen Pham",
+  "photo": "/profile.jpeg",
+  "titles": ["Web Developer", "Undergraduate Researcher"],
+  "university": "Purdue University",
+  "location": "West Lafayette, IN",
+  "links": [
+    {
+      "label": "GitHub",
+      "sub": "soleilpham",
+      "href": "https://github.com/soleilpham",
+      "icon": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "sub": "chan-nhu-p",
+      "href": "https://www.linkedin.com/in/chan-nhu-p-4876a127a",
+      "icon": "linkedin"
+    },
+    {
+      "label": "Email",
+      "sub": "soleilpham@gmail.com",
+      "href": "mailto:soleilpham@gmail.com",
+      "icon": "email"
+    },
+    {
+      "label": "CV",
+      "sub": "Download PDF",
+      "href": "/cv",
+      "icon": "cv"
+    },
+    {
+      "label": "LeetCode",
+      "sub": "soleilpham",
+      "href": "https://leetcode.com/u/soleilpham/",
+      "icon": "leetcode"
+    }
+  ]
+}

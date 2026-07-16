@@ -41,8 +41,10 @@ export const cn = {
   tagLavender:"text-xs px-2.5 py-1 bg-brand-lavender/25 text-brand-purple rounded-full font-medium",
   tagWhite:   "text-xs px-3 py-1 bg-slate-100 text-slate-700 rounded-full",
 
-  // ── Status badges ──
-  badgeReview: "text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-coral/15 text-brand-coral",
+  // ── Status badges (colours meet WCAG AA 4.5:1) ──
+  // coral/15 background ≈ #FFE8E8 — text-red-700 (#b91c1c) gives ~7.5:1 contrast
+  badgeReview: "text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-coral/15 text-red-700",
+  // lavender/30 background ≈ #EAEAF4 — text-brand-purple (#5B5F97) gives ~6:1 contrast
   badgePrep:   "text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-lavender/30 text-brand-purple",
 
   // ── Buttons ──
@@ -66,12 +68,12 @@ export const cn = {
 
   // ── Navbar ──
   navLink:
-    "relative px-2 py-1 text-sm text-slate-600 transition-colors hover:text-brand-purple whitespace-nowrap " +
+    "relative px-3.5 py-1 text-sm text-slate-600 transition-colors hover:text-brand-purple whitespace-nowrap " +
     "after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 " +
     "after:h-0.5 after:bg-brand-coral after:scale-x-0 after:origin-left " +
     "after:transition-transform after:duration-200 hover:after:scale-x-100",
   navLinkActive:
-    "relative px-2 py-1 text-sm text-brand-purple font-semibold whitespace-nowrap " +
+    "relative px-3.5 py-1 text-sm text-brand-purple font-semibold whitespace-nowrap " +
     "after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 " +
     "after:h-0.5 after:bg-brand-coral after:scale-x-100 after:origin-left",
 

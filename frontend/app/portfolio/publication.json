@@ -1,0 +1,31 @@
+{
+  "comingSoon": true,
+  "labs": [
+    { "name": "PurSec Lab"  },
+    { "name": "Snowball Lab" },
+    { "name": "CoRAL Lab"   }
+  ],
+  "items": [
+    {
+      "title": "Security and Privacy Implications of Large Language Models in Augmented Reality Applications",
+      "lab": "PurSec Lab",
+      "venue": "Under Review",
+      "year": "2025",
+      "desc": "Survey and empirical study on XR privacy risks and user security awareness regarding LLMs/VLMs integrated into AR applications."
+    },
+    {
+      "title": "Dietary Classification from PPG and Accelerometer Signals Using Smart Earring Wearables",
+      "lab": "Snowball Lab",
+      "venue": "In Preparation",
+      "year": "2025",
+      "desc": "Predictive ML pipeline for classifying user dietary patterns using PPG signals and accelerometer data from custom-assembled smart earring wearables."
+    },
+    {
+      "title": "Architectural Modifications to Foundation Models for Long-Horizon Robotic Task Planning",
+      "lab": "CoRAL Lab",
+      "venue": "In Preparation",
+      "year": "2025",
+      "desc": "Analysis of LLM and ML architectures, synthesizing techniques to enhance sequential task planning and execution in robotic manipulators."
+    }
+  ]
+}

@@ -11,12 +11,11 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
+  // Favicon — must use BASE_URL prefix so it resolves under /source/ on GitHub Pages
+  { rel: "icon", href: `${import.meta.env.BASE_URL}favicon.ico`, type: "image/x-icon" },
+  // DNS + TLS handshake for Google Fonts before the stylesheet is parsed
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
+  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
@@ -29,6 +28,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Mobile browser chrome colour */}
+        <meta name="theme-color" content="#FFFFFB" />
+        {/* Caching: JS/CSS bundles have content-hash names → long-lived cache via CDN */}
         <Meta />
         <Links />
       </head>
