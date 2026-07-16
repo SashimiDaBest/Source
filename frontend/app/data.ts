@@ -105,7 +105,6 @@ export const publication = rawPublication as {
   items: Publication[];
 };
 export const cv = rawCv as {
-  downloadUrl: string;
   bio: string;
   stats: Stat[];
   quickLinks: QuickLink[];

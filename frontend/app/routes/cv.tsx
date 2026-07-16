@@ -1,16 +1,13 @@
 import type { Route } from "./+types/cv";
 import { SectionHeader, DownloadIcon } from "../components/ui";
 import { cn } from "../styles";
-import { cv } from "../data";
-import { publicUrl } from "../utils";
+import resumeUrl from "../assets/resume.pdf?url";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "CV — Soleil Pham" }];
 }
 
 export default function CV() {
-  const resumeUrl = publicUrl(cv.downloadUrl);
-
   return (
     <div className="p-6 md:p-8">
       <SectionHeader label="CV" title="Curriculum Vitae" />
