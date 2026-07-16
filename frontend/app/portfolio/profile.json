@@ -35,6 +35,12 @@
       "sub": "soleilpham",
       "href": "https://leetcode.com/u/soleilpham/",
       "icon": "leetcode"
+    },
+    {
+      "label": "Devpost",
+      "sub": "SashimiDaBest",
+      "href": "https://devpost.com/SashimiDaBest",
+      "icon": "devpost"
     }
   ]
 }

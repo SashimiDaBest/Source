@@ -9,6 +9,7 @@ import {
   EmailIcon,
   CVIcon,
   LeetCodeIcon,
+  DevpostIcon,
   LocationIcon,
 } from "../components/ui";
 
@@ -25,6 +26,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   email:    <EmailIcon size={17} />,
   cv:       <CVIcon size={17} />,
   leetcode: <LeetCodeIcon size={17} />,
+  devpost:  <DevpostIcon size={17} />,
 };
 
 const MAP_URL = "https://maps.app.goo.gl/qgyWv4zwnnWzVePK9";

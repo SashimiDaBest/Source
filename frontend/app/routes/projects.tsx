@@ -6,6 +6,8 @@ import {
   SmallCodeLink,
   SmallPrimaryLink,
   GitHubIcon,
+  DevpostIcon,
+  YouTubeIcon,
 } from "../components/ui";
 import { projects } from "../data";
 
@@ -49,6 +51,16 @@ export default function Projects() {
               {p.githubFrontend && (
                 <SmallCodeLink href={p.githubFrontend}>
                   <GitHubIcon size={11} /> Frontend
+                </SmallCodeLink>
+              )}
+              {p.devpost && (
+                <SmallCodeLink href={p.devpost}>
+                  <DevpostIcon size={11} /> Devpost
+                </SmallCodeLink>
+              )}
+              {p.youtube && (
+                <SmallCodeLink href={p.youtube}>
+                  <YouTubeIcon size={11} /> Video
                 </SmallCodeLink>
               )}
               {p.live && <SmallPrimaryLink href={p.live}>Live ↗</SmallPrimaryLink>}

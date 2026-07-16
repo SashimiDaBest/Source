@@ -32,6 +32,8 @@ export {
   EmailIcon,
   CVIcon,
   LeetCodeIcon,
+  DevpostIcon,
+  YouTubeIcon,
   LocationIcon,
   DownloadIcon,
   ExternalLinkIcon,

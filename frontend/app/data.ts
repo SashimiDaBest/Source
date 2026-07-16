@@ -15,7 +15,7 @@ export type ProfileLink = {
   label: string;
   sub: string;
   href: string;
-  icon: "github" | "linkedin" | "email" | "cv" | "leetcode";
+  icon: "github" | "linkedin" | "email" | "cv" | "leetcode" | "devpost";
 };
 
 export type Profile = {
@@ -42,6 +42,8 @@ export type Project = {
   githubBackend?: string;
   githubFrontend?: string;
   live?: string;
+  devpost?: string;
+  youtube?: string;
 };
 
 export type Lab = {

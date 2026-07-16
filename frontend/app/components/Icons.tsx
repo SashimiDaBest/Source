@@ -43,6 +43,25 @@ export function LeetCodeIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+export function DevpostIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect width="20" height="20" x="2" y="2" rx="4" />
+      <path d="M8 8h2.5a3.5 3.5 0 0 1 0 8H8V8Z" fill="currentColor" stroke="none" />
+      <path d="M14 8.5 16.5 12 14 15.5" />
+    </svg>
+  );
+}
+
+export function YouTubeIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21.582 7.192a2.51 2.51 0 0 0-1.766-1.778C18.254 5 12 5 12 5s-6.254 0-7.816.414a2.51 2.51 0 0 0-1.766 1.778C2 8.767 2 12 2 12s0 3.233.418 4.808a2.51 2.51 0 0 0 1.766 1.778C5.746 19 12 19 12 19s6.254 0 7.816-.414a2.51 2.51 0 0 0 1.766-1.778C22 15.233 22 12 22 12s0-3.233-.418-4.808Z" />
+      <path d="m10 9.5 5 2.5-5 2.5v-5Z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export function LocationIcon({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -28,6 +28,8 @@
     "desc": "BoilerMake 2025 hackathon project that converts uploaded PDF study materials into podcast-style audio so students can study hands-free. A Django REST Framework backend extracts text with PyMuPDF, generates a script, and synthesizes multi-voice narration through the OpenAI API, with MongoDB/GridFS storing documents and Redis caching results for fast playback. The React frontend, secured with Auth0, lets students stream the generated podcast in-browser or download it for offline listening.",
     "tags": ["Django", "MongoDB", "Python", "JavaScript", "React", "OpenAI API", "Auth0", "Redis", "Django REST Framework"],
     "github": "https://github.com/soleilpham/TalkingSlides",
+    "devpost": "https://devpost.com/software/talking-slides",
+    "youtube": "https://www.youtube.com/watch?v=gHKCl0EinFo",
     "live": ""
   },
   {
@@ -57,7 +59,18 @@
     "desc": "3rd-place project at Purdue's Hello World Hackathon 2024 — a community-driven roadside assistance app that lets stranded drivers share their exact location and issue so nearby volunteers can help. Built on the MERN stack, with a Node/Express REST API backed by MongoDB and a React frontend that uses Leaflet for real-time map visualization, geolocation pinpointing, and routing between drivers and responders. Also includes a self-service troubleshooting guide for common roadside issues.",
     "tags": ["MongoDB", "Express", "React", "Node.js", "Leaflet", "Geolocation", "Axios", "MERN Stack"],
     "github": "https://github.com/soleilpham/hello-world-hack-24",
+    "devpost": "https://devpost.com/software/roadie-rescue",
+    "youtube": "https://www.youtube.com/watch?v=Ib8hYH-UxRY",
     "live": ""
+  },
+  {
+    "title": "Site Scouter",
+    "desc": "Geospatial decision-support tool built at Catapult 2026 that helps identify optimal sites for solar panels, wind turbines, and data centers within a user-drawn region. A FastAPI backend subdivides the area into cells and scores each one using satellite imagery, terrain, and OpenStreetMap data, including a PyTorch model trained on thousands of real wind and solar projects that predicts power generation with R² > 0.90. The React + Leaflet frontend ranks and visualizes the top candidate sites on an interactive map, aiming to give companies and affected communities clearer, data-driven siting decisions.",
+    "tags": ["FastAPI", "Python", "React", "Leaflet", "PyTorch", "Docker", "AWS", "Geospatial Analysis", "Machine Learning", "OpenStreetMap"],
+    "github": "https://github.com/Reversal9/catapult2026",
+    "devpost": "https://devpost.com/software/site-scout",
+    "youtube": "https://www.youtube.com/watch?v=PsACjryHSwQ",
+    "live": "https://shorturl.at/4f8M9"
   },
   {
     "title": "Hexagon World",
