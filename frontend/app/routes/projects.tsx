@@ -33,8 +33,12 @@ export default function Projects() {
             </div>
             <div className="flex flex-wrap gap-2 pt-2.5 border-t border-brand-lavender/30 mt-auto">
               {p.github && (
-                <SmallCodeLink href={p.github}>
-                  <GitHubIcon size={11} /> Code
+                <SmallCodeLink
+                  href={p.github}
+                  disabled={p.githubPrivate}
+                  disabledLabel="Repo is private"
+                >
+                  <GitHubIcon size={11} /> {p.githubPrivate ? "Repo is private" : "Code"}
                 </SmallCodeLink>
               )}
               {p.githubBackend && (

@@ -44,10 +44,28 @@ export function OutlineButton({
 export function SmallCodeLink({
   href,
   children,
+  disabled,
+  disabledLabel,
 }: {
   href: string;
   children: React.ReactNode;
+  disabled?: boolean;
+  disabledLabel?: string;
 }) {
+  if (disabled) {
+    return (
+      <button
+        type="button"
+        disabled
+        title={disabledLabel}
+        aria-label={disabledLabel}
+        className={`${cn.btnSmGhost} opacity-50 cursor-not-allowed hover:bg-brand-lavender/20`}
+      >
+        {children}
+      </button>
+    );
+  }
+
   return (
     <a href={href} target="_blank" rel="noreferrer" className={cn.btnSmGhost}>
       {children}

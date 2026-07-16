@@ -38,6 +38,7 @@ export type Project = {
   desc: string;
   tags: string[];
   github?: string;
+  githubPrivate?: boolean;
   githubBackend?: string;
   githubFrontend?: string;
   live?: string;
