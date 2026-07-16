@@ -16,43 +16,13 @@
     "live": ""
   },
   {
-    "title": "BoilerBuzz",
-    "desc": "Cross-platform mobile social app that helps Purdue students discover campus events and clubs through shareable posters. The Express/TypeScript backend exposes a documented REST API (Swagger/OpenAPI) backed by PostgreSQL for posters, clubs, users, bookmarks, and search, while the Expo React Native frontend consumes that API on iOS, Android, and web with Clerk handling authentication. Built as a Purdue ACM SIGAPP team project with full CRUD, tag-based search, and role-based club administration.",
-    "tags": ["Node.js", "PostgreSQL", "TypeScript", "React Native", "Express", "Expo", "Clerk Auth", "REST API", "Swagger/OpenAPI"],
-    "githubBackend": "https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-backend",
-    "githubFrontend": "https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-frontend",
-    "live": ""
-  },
-  {
-    "title": "Talking Slides",
-    "desc": "BoilerMake 2025 hackathon project that converts uploaded PDF study materials into podcast-style audio so students can study hands-free. A Django REST Framework backend extracts text with PyMuPDF, generates a script, and synthesizes multi-voice narration through the OpenAI API, with MongoDB/GridFS storing documents and Redis caching results for fast playback. The React frontend, secured with Auth0, lets students stream the generated podcast in-browser or download it for offline listening.",
-    "tags": ["Django", "MongoDB", "Python", "JavaScript", "React", "OpenAI API", "Auth0", "Redis", "Django REST Framework"],
-    "github": "https://github.com/soleilpham/TalkingSlides",
-    "devpost": "https://devpost.com/software/talking-slides",
-    "youtube": "https://www.youtube.com/watch?v=gHKCl0EinFo",
-    "live": ""
-  },
-  {
-    "title": "BoilerGram",
-    "desc": "Instagram-inspired social media platform built from scratch in Java for a CS 180 team project, using a custom multi-threaded client-server architecture over raw TCP sockets instead of a web framework. The Swing-based GUI client supports account creation, following/blocking, and profile browsing, while the server manages authentication, persistence, and real-time group messaging with file-based storage. Unit tested with JUnit and built around clean interface-based design with custom exception handling.",
-    "tags": ["Java", "Swing", "JUnit", "Multithreading", "TCP Sockets", "Client-Server Architecture"],
-    "github": "https://github.com/soleilpham/social-media-app",
-    "live": ""
-  },
-  {
-    "title": "Bucket List",
-    "desc": "Mobile social app that lets friend groups create, share, and check off bucket-list goals together. Built with a Node.js backend and a React Native frontend in JavaScript, it gives users a native mobile experience for tracking shared goals and celebrating completions with friends. Developed as a Purdue ACM SIGAPP team project.",
-    "tags": ["JavaScript", "Node.js", "React Native", "Mobile App", "Social Media"],
-    "github": "https://github.com/Purdue-ACM-SIGAPP/BucketList",
-    "githubPrivate": true,
-    "live": ""
-  },
-  {
-    "title": "Boiler Rooms — Backend",
-    "desc": "Backend API for a Purdue housing app that lets students view, rate, and review off-campus dorms and apartments on an interactive map. Built with ASP.NET Core 6 and MongoDB, it uses custom scope-based authorization handlers to secure endpoints and organizes logic across dedicated controller, service, and entity layers. Containerized with Docker and deployed via GitHub Actions CI/CD as part of a Purdue ACM SIGAPP team project.",
-    "tags": ["C#", ".NET", "ASP.NET Core", "MongoDB", "Docker", "GitHub Actions", "REST API"],
-    "github": "https://github.com/Purdue-ACM-SIGAPP/BoilerRooms-backend",
-    "live": ""
+    "title": "Site Scouter",
+    "desc": "Geospatial decision-support tool built at Catapult 2026 that helps identify optimal sites for solar panels, wind turbines, and data centers within a user-drawn region. A FastAPI backend subdivides the area into cells and scores each one using satellite imagery, terrain, and OpenStreetMap data, including a PyTorch model trained on thousands of real wind and solar projects that predicts power generation with R² > 0.90. The React + Leaflet frontend ranks and visualizes the top candidate sites on an interactive map, aiming to give companies and affected communities clearer, data-driven siting decisions.",
+    "tags": ["FastAPI", "Python", "React", "Leaflet", "PyTorch", "Docker", "AWS", "Geospatial Analysis", "Machine Learning", "OpenStreetMap"],
+    "github": "https://github.com/Reversal9/catapult2026",
+    "devpost": "https://devpost.com/software/site-scout",
+    "youtube": "https://www.youtube.com/watch?v=PsACjryHSwQ",
+    "live": "https://shorturl.at/4f8M9"
   },
   {
     "title": "Roadie Rescue",
@@ -64,13 +34,11 @@
     "live": ""
   },
   {
-    "title": "Site Scouter",
-    "desc": "Geospatial decision-support tool built at Catapult 2026 that helps identify optimal sites for solar panels, wind turbines, and data centers within a user-drawn region. A FastAPI backend subdivides the area into cells and scores each one using satellite imagery, terrain, and OpenStreetMap data, including a PyTorch model trained on thousands of real wind and solar projects that predicts power generation with R² > 0.90. The React + Leaflet frontend ranks and visualizes the top candidate sites on an interactive map, aiming to give companies and affected communities clearer, data-driven siting decisions.",
-    "tags": ["FastAPI", "Python", "React", "Leaflet", "PyTorch", "Docker", "AWS", "Geospatial Analysis", "Machine Learning", "OpenStreetMap"],
-    "github": "https://github.com/Reversal9/catapult2026",
-    "devpost": "https://devpost.com/software/site-scout",
-    "youtube": "https://www.youtube.com/watch?v=PsACjryHSwQ",
-    "live": "https://shorturl.at/4f8M9"
+    "title": "Save The Chicken",
+    "desc": "A quick reflex-testing arcade game built in Unity where players must react in time to halt Santa's sleigh before a chicken crosses the road. Built in C# using Unity's physics and animation systems, with the game exported to WebGL and playable directly in-browser via GitHub Pages.",
+    "tags": ["C#", "Unity", "Game Development", "WebGL", "Reflex/Reaction Game"],
+    "github": "https://github.com/soleilpham/save-chickens",
+    "live": "https://soleilpham.github.io/save-chickens-build/"
   },
   {
     "title": "Hexagon World",
@@ -80,10 +48,42 @@
     "live": "https://soleilpham.github.io/hexagon-world-build/"
   },
   {
-    "title": "Save The Chicken",
-    "desc": "A quick reflex-testing arcade game built in Unity where players must react in time to halt Santa's sleigh before a chicken crosses the road. Built in C# using Unity's physics and animation systems, with the game exported to WebGL and playable directly in-browser via GitHub Pages.",
-    "tags": ["C#", "Unity", "Game Development", "WebGL", "Reflex/Reaction Game"],
-    "github": "https://github.com/soleilpham/save-chickens",
-    "live": "https://soleilpham.github.io/save-chickens-build/"
+    "title": "Talking Slides",
+    "desc": "BoilerMake 2025 hackathon project that converts uploaded PDF study materials into podcast-style audio so students can study hands-free. A Django REST Framework backend extracts text with PyMuPDF, generates a script, and synthesizes multi-voice narration through the OpenAI API, with MongoDB/GridFS storing documents and Redis caching results for fast playback. The React frontend, secured with Auth0, lets students stream the generated podcast in-browser or download it for offline listening.",
+    "tags": ["Django", "MongoDB", "Python", "JavaScript", "React", "OpenAI API", "Auth0", "Redis", "Django REST Framework"],
+    "github": "https://github.com/soleilpham/TalkingSlides",
+    "devpost": "https://devpost.com/software/talking-slides",
+    "youtube": "https://www.youtube.com/watch?v=gHKCl0EinFo",
+    "live": ""
+  },
+  {
+    "title": "Bucket List",
+    "desc": "Mobile social app that lets friend groups create, share, and check off bucket-list goals together. Built with a Node.js backend and a React Native frontend in JavaScript, it gives users a native mobile experience for tracking shared goals and celebrating completions with friends. Developed as a Purdue ACM SIGAPP team project.",
+    "tags": ["JavaScript", "Node.js", "React Native", "Mobile App", "Social Media"],
+    "github": "https://github.com/Purdue-ACM-SIGAPP/BucketList",
+    "githubPrivate": true,
+    "live": ""
+  },
+  {
+    "title": "BoilerBuzz",
+    "desc": "Cross-platform mobile social app that helps Purdue students discover campus events and clubs through shareable posters. The Express/TypeScript backend exposes a documented REST API (Swagger/OpenAPI) backed by PostgreSQL for posters, clubs, users, bookmarks, and search, while the Expo React Native frontend consumes that API on iOS, Android, and web with Clerk handling authentication. Built as a Purdue ACM SIGAPP team project with full CRUD, tag-based search, and role-based club administration.",
+    "tags": ["Node.js", "PostgreSQL", "TypeScript", "React Native", "Express", "Expo", "Clerk Auth", "REST API", "Swagger/OpenAPI"],
+    "githubBackend": "https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-backend",
+    "githubFrontend": "https://github.com/Purdue-ACM-SIGAPP/boilerbuzz-frontend",
+    "live": ""
+  },
+  {
+    "title": "BoilerGram",
+    "desc": "Instagram-inspired social media platform built from scratch in Java for a CS 180 team project, using a custom multi-threaded client-server architecture over raw TCP sockets instead of a web framework. The Swing-based GUI client supports account creation, following/blocking, and profile browsing, while the server manages authentication, persistence, and real-time group messaging with file-based storage. Unit tested with JUnit and built around clean interface-based design with custom exception handling.",
+    "tags": ["Java", "Swing", "JUnit", "Multithreading", "TCP Sockets", "Client-Server Architecture"],
+    "github": "https://github.com/soleilpham/social-media-app",
+    "live": ""
+  },
+  {
+    "title": "Boiler Rooms — Backend",
+    "desc": "Backend API for a Purdue housing app that lets students view, rate, and review off-campus dorms and apartments on an interactive map. Built with ASP.NET Core 6 and MongoDB, it uses custom scope-based authorization handlers to secure endpoints and organizes logic across dedicated controller, service, and entity layers. Containerized with Docker and deployed via GitHub Actions CI/CD as part of a Purdue ACM SIGAPP team project.",
+    "tags": ["C#", ".NET", "ASP.NET Core", "MongoDB", "Docker", "GitHub Actions", "REST API"],
+    "github": "https://github.com/Purdue-ACM-SIGAPP/BoilerRooms-backend",
+    "live": ""
   }
 ]
