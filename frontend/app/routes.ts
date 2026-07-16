@@ -4,9 +4,7 @@ export default [
   layout("routes/_layout.tsx", [
     index("routes/home.tsx"),
     route("projects",    "routes/projects.tsx"),
-    route("education",   "routes/education.tsx"),
     route("publication", "routes/publication.tsx"),
-    route("swe",         "routes/swe.tsx"),
     route("cv",          "routes/cv.tsx"),
     route("blog",        "routes/blog.tsx"),
     route("blog/:slug",  "routes/blog.$slug.tsx"),

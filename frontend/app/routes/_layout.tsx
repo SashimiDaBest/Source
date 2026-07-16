@@ -14,9 +14,7 @@ import {
 
 const NAV_LINKS = [
   { to: "/projects",    label: "Projects"    },
-  { to: "/education",   label: "Education"   },
   { to: "/publication", label: "Publication" },
-  { to: "/swe",         label: "SWE"         },
   { to: "/cv",          label: "CV"          },
   // { to: "/blog",        label: "Blog"        },
 ];

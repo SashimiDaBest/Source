@@ -6,8 +6,6 @@
 import rawProfile     from "./portfolio/profile.json";
 import rawHome        from "./portfolio/home.json";
 import rawProjects    from "./portfolio/projects.json";
-import rawEducation   from "./portfolio/education.json";
-import rawSwe         from "./portfolio/swe.json";
 import rawPublication from "./portfolio/publication.json";
 import rawCv          from "./portfolio/cv.json";
 
@@ -45,14 +43,6 @@ export type Project = {
   live?: string;
 };
 
-export type Experience = {
-  org: string;
-  location: string;
-  role: string;
-  period: string;
-  bullets: string[];
-};
-
 export type Lab = {
   name: string;
   focus: string;
@@ -86,19 +76,6 @@ export type BlogPost = {
 export const profile   = rawProfile   as Profile;
 export const home      = rawHome      as { greeting: string; bio: string; stats: Stat[] };
 export const projects  = rawProjects  as Project[];
-export const education = rawEducation as {
-  degree: {
-    school: string;
-    degree: string;
-    concentration: string;
-    minor: string;
-    location: string;
-    period: string;
-  };
-  coursework: string[];
-  skills: Record<string, string[]>;
-};
-export const swe = rawSwe as Experience[];
 export const publication = rawPublication as {
   comingSoon: boolean;
   labs: Lab[];

@@ -2,7 +2,7 @@ import type { Route } from "./+types/home";
 import { Link } from "react-router";
 import { PageWrapper, Card, TagMuted, GitHubIcon, LinkedInIcon, EmailIcon } from "../components/ui";
 import { cn } from "../styles";
-import { home, projects, swe } from "../data";
+import { home, projects } from "../data";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -73,24 +73,6 @@ export default function Home() {
           </Card>
         ))}
       </div>
-
-      {/* Latest experience */}
-      <div className="mb-3 flex items-center justify-between">
-        <p className={cn.sectionLabel}>Latest Experience</p>
-        <Link to="/swe" className={cn.accentLink + " text-xs font-semibold"}>
-          View all →
-        </Link>
-      </div>
-      <Card>
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-          <div>
-            <p className="font-bold text-slate-900 text-sm">{swe[0].org}</p>
-            <p className="text-brand-purple font-semibold text-xs mt-0.5">{swe[0].role}</p>
-          </div>
-          <p className="text-xs text-slate-500 shrink-0">{swe[0].period}</p>
-        </div>
-        <p className="text-xs text-slate-600 leading-relaxed">{swe[0].bullets[0]}</p>
-      </Card>
 
       <p className="mt-14 text-xs text-slate-400 text-center">
         © {new Date().getFullYear()} {/* fullName from profile could go here */}
